@@ -8,7 +8,7 @@
 </head>
 <body><h1>Roos L Marie, veebiprogrammeerimine</h1>  <p>See veebileht on loodud õppetöö käigus ning ei sisalda mingit tõsiseltvõetavad sisu.</p>
   <hr>
-  <h2>Eesti filmid</h2>
+  <h2>Vene filmid</h2>
   <p>Lisa uus film andmebaasi <p/>
   <hr>
   <form method="POST">
