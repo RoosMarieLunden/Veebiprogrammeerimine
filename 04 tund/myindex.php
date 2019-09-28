@@ -1,7 +1,3 @@
-<?php
-  //echo "Hei!";
-  phpversion();
-?>
 <!DOCTYPE html>
 <html lang="et">
 <head>
