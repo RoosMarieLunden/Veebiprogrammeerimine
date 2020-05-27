@@ -1,0 +1,323 @@
+@font-face{
+    src: url(Lobster-Regular.ttf);
+    font-family: lobs;
+}
+
+body {
+    width: 80%;
+    max-width: 1200px;
+    margin: 10px;
+    padding: 0px;
+    color: gray;
+    background-color: rgb(210, 230, 255);
+    font-family: arial;
+    background-image: url("pics/tlu_h200.png");
+    background-repeat: no-repeat;
+    /*no-repeat   repeat  repeat-x   repeat-y*/
+    /*background-position: center center;*/
+    background-position: 1220px 50px;
+    background-attachment: fixed;
+    /*scroll  fixed  local*/
+}
+
+section {
+    background-color: rgba(255, 255, 255, .5);
+    background-image: url("pics/top_left_01_transparent.png"), url("pics/top_right_01_transparent.png"), url("pics/bottom_right_01_transparent.png"), url("pics/bottom_left_01_transparent.png");
+    background-position: top left, top right, bottom right, bottom left;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    /*contain  cover*/
+    background-origin: border-box;
+    /*padding-box   border-box  content-box*/
+    /*background-clip   samade väärtustega, mis origin omadusel, määrab, millise ala taust katab*/
+    background-clip: border-box;
+    max-height: 600px;
+    padding: 25px;
+    /*margin-top: 10px;*/
+    /*margin: 10px 0px;*/
+    margin: 10px 0px 0px 0px;
+    border: 5px solid white;
+    overflow: auto;
+    /* visible  hidden   auto  scroll*/
+    /*overflow-x  ja overflow-y*/
+}
+
+canvas {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.art {
+    max-height: 900px;
+}
+
+h1,
+h2,
+h3 {
+    color: #000099;
+    transition: color 1s;
+}
+
+h1:hover,
+h2:hover,
+h3:hover {
+    color: #990000;
+}
+
+
+h1 {
+    font-family: lobs;
+} 
+
+nav {
+    background-color: rgba(255, 200, 230, .5);
+    box-sizing: content-box;
+    /*content-box    border-box*/
+    width: 300px;
+    /*margin: 10px;*/
+    padding: 10px;
+    border-width: 10px;
+    border-style: dashed;
+    /*solid   dotted    dashed  inset   groove*/
+    border-color: white;
+    position: fixed;
+    /*static   relative   absolute   fixed*/
+    top: 260px;
+    left: 80%;
+}
+
+
+
+
+
+.weird {
+    transform-origin: left top;
+    /*transform: translate(400px, 0px) rotate(-5deg) scale(.5, -1) skew(45deg, 0deg);*/
+    transform: rotate(-5deg);
+    opacity: .6;
+    /*transition-property   transition-duration  transition-delay  transition-timing-function*/
+    transition: all 2s ease-in-out;
+}
+
+.weird:hover {
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+.time {
+    /*max-height: 1050px; */
+}
+
+.clockArea {
+    width: 277px;
+    height: 473px;
+}
+
+.clock {
+    position: relative;
+    /*mõõt vastavusse kella suuruse*/
+    width: 554px;
+    height: 945px;
+    transform-origin: 0% 0%;
+    transform: scale(.5);
+}
+
+.clock * {
+    position: absolute;
+}
+
+.clockface {
+    width: 369px;
+    height: 369px;
+    left: 92px;
+    top: 90px;
+}
+
+.clockhand {
+    left: 158px;
+    top: 10px;
+    transform-origin: 50% 176px;
+}
+
+.clockwork {
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    /*ease linear  ease-in  ease-out  ease-in-out   cubic-bezier(n,n,n,n)  n= 0 ... 1*/
+    /*animation-delay*/
+    animation-iteration-count: infinite;
+    /*n    infinite*/
+    animation-direction: normal;
+    /*normal  reverse  alternate  alternate-reverse*/
+    /*animation-fill-mode*/
+    /*animation-play-state*/
+}
+
+.clocksec {
+    animation-duration: 1s;
+    animation-play-state: running;
+    /*running paused*/
+}
+
+.clockmin {
+    animation-duration: 60s;
+}
+
+.clockhour {
+    animation-duration: 720s;
+}
+
+.pendulus {
+    left: 194px;
+    top: 400px;
+    transform-origin: 50% 0%;
+    /* animation-name: swing;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 2s;
+	animation-fill-mode: both; */
+    /*none   forwards   backwards   both*/
+    animation: swing 1s ease-in-out infinite alternate both;
+}
+
+.animation {
+    width: 800px;
+    height: 450px;
+
+}
+
+.puu {
+    height: 400px;
+    margin-top: 50px;
+    z-index: 1;
+
+}
+
+.tramm {
+    position: relative;
+    bottom: 100px;
+    /* transform: scale(0.25); */
+    width: 400px;
+    right: 400px;
+    animation: trammisoit 3s ease-in-out infinite;
+}
+
+.paike {
+    bottom: 300px;
+    position: relative;
+    z-index: 0;
+    animation: sunspin 1s, sunset 3s;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    /*animation-fill-mode: both;
+
+    /*none   forwards   backwards   both*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CSS animatsioon, võtmekaadrid*/
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes sunspin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes sunset {
+    0% {
+        transform: scale(0.5);
+    }
+
+    25% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    75% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes trammisoit1 {
+    from {
+        left: 0px;
+    }
+
+    to {
+        right: 400px;
+    }
+}
+
+@keyframes trammisoit {
+    0% {
+        right: -400px;
+    }
+
+    25% {
+        right: -200px;
+    }
+
+    50% {
+        right: 200px;
+    }
+
+    75% {
+        right: 300px;
+    }
+
+    100% {
+        right: 400px;
+    }
+}

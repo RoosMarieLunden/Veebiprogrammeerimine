@@ -1,0 +1,258 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: rgb(204, 216, 255);
+	font-family: verdana;
+	font-size: 12px;
+}
+
+.main-grid{
+	/*border: 1px solid red;*/
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 200px 400px auto 200px;
+	grid-template-rows: 180px auto 180px;
+}
+
+.grid-item{
+	overflow: hidden;
+	border-radius: 20px 20px 20px 20px;
+	padding: 20px
+}
+
+.namearea{
+	grid-column: 2 / 4;
+	grid-row: 1 / 2;
+}
+
+.cubearea{
+	box-shadow: 0px 0px 5px white inset, 0px 0px 5px white;
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+}
+
+.menuarea{
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+}
+
+.contentarea2 {
+	box-shadow: 0px 0px 5px white inset, 0px 0px 5px white;
+	grid-column: 3 / 4;
+	grid-row: 2 / 3;
+	text-indent: 20px;
+}
+
+li {
+	text-indent: 20px;
+}
+
+ul {
+	padding-left: 20px;
+}
+
+.indicatorarea-bottom-left {
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+}
+
+.indicatorarea-bottom-right {
+	grid-column: 4 / 5;
+	grid-row: 3 / 4;
+}
+
+.indicatorarea-top-left {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+
+.banner-bottom {
+	grid-column: 2 / 4;
+	grid-row: 3 / 4;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.cubecontainer {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	width:400px;
+	height: 400px;
+	perspective: 800px;/*määrab  kauguse vaatajast*/
+	perspective-origin: 50% 50%;/*perspektiivpunkt*/
+	text-align: center;
+}
+
+.cube {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+	margin: 100px auto;
+}
+
+
+.cube:active {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+	margin: 100px auto;
+    top: 150px;
+    animation-name: rotating;
+    animation-iteration-count: infinite;
+    z-index: 0;
+    animation: rotating 5s infinite;
+    animation-duration: infinite;
+    animation-timing-function: linear;
+}
+
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	
+	color: rgba(0,0,0,0.8);
+	text-transform: uppercase;
+}
+
+.hide {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+
+    transform-origin: center;
+    /*box-shadow: 0 0 40px black;*/
+    box-shadow: inset 0 0 40px #292929;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+	backface-visibility: hidden;
+}
+
+.hide {
+    line-height: 100px;
+    /*line-height 340px;*/
+
+}
+
+p {
+    backface-visibility: hidden;
+}
+
+.hide p {
+    color: rgb(86, 7, 7);
+}
+
+
+
+
+
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+}
+
+.backcover {
+	background: rgba(255,0,0,0.2);
+
+}
+
+.left {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+}
+
+.leftcover {
+	background: rgba(0,255,0,0.2);
+}
+
+.right {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+}
+
+.rightcover {
+	background: rgba(0,0,255,0.2);
+}
+
+.top {
+	transform: rotateX(-90deg) rotateY(180deg) translateY(-100px);
+	transform-origin: top center;
+}
+
+.topcover {
+	background: rgba(255,255,0,0.2);
+}
+
+.bottom {
+	transform: rotateX(90deg) rotateY(180deg) translateY(100px);
+	transform-origin: bottom center;
+}
+
+.bottomcover {
+	background: rgba(255,0,255,0.2);
+}
+
+.front {
+	transform: translateZ(100px);
+}
+
+.frontcover {
+	background: rgba(0,255,255,0.2);
+}
+
+
+
+
+/* KEYFRAMES*/
+
+
+@keyframes rotating {
+	100% {
+		transform: rotateY(0deg);
+    }
+    0% {
+		transform: rotateY(90deg);
+    }
+    100% {
+		transform: rotateY(90deg);
+    }
+    0% {
+		transform: rotateY(180deg);
+    }
+    100% {
+		transform: rotateY(180deg);
+    }
+    0% {
+		transform: rotateY(270deg);
+    }
+    100% {
+		transform: rotateY(270deg);
+    }
+    0% {
+		transform: rotateY(360deg);
+    }
+/*
+    100% {
+		transform: rotateY(0deg);
+    }
+    0% {
+		transform: rotateY(90deg);
+    }    */
+    
+}
+
+
+.rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+}

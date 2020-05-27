@@ -1,0 +1,50 @@
+@font-face{
+    src: url(Lobster-Regular.ttf);
+    font-family: lobs;
+}
+
+
+body {
+    background-color: #FFE799
+    
+} 
+
+
+
+h1 {
+    font-family: trendy, joan, "comic sans ms"
+    
+} 
+
+h1:hover {
+    background-color: black;
+    color: white;
+    transition-duration: 1s;
+}
+
+section {
+    font-size: 20px;
+    line-height: 62px;
+    font-family: lobs;
+
+}
+
+link:hover{
+    transition-duration: 2s;
+    background-color: rgb(255, 244, 209);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:link {
+	color: purple;
+}
+
+a:visited {
+	color: red;
+}
+
+a:hover {
+	transition-duration: 2s;
+    background-color: rgb(255, 244, 209);
+    font-family: Arial, Helvetica, sans-serif;
+}
